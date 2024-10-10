@@ -1,16 +1,16 @@
 spring:
   application:
-    name: aluguelLivros
+    name: aluguel_livros
 
-    datasource:
-      url: jdbc:mysql://localhost:3306/aluguelLivros
-      username: root
-      password: "3005"
-      driver-class-name: com.mysql.cj.jdbc.Driver
+  datasource:
+    url: jdbc:mysql://localhost:3306/aluguel_livros
+    username: root
+    password: 3005
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
-    jpa:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
       hibernate:
-        ddl-auto: update
-      properties:
-        hibernate:
-          dialect: org.hibernate.dialect.MySQLDialect
+        dialect: org.hibernate.dialect.MySQLDialect

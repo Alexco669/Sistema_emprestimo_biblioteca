@@ -16,7 +16,7 @@ public class Emprestimo {
     @ManyToOne(fetch = FetchType.LAZY)
     private Exemplar exemplar;
     @JoinColumn(name = "id_cliente")
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     private Cliente cliente;
     @Column(name = "data_emprestimo")
     private LocalDate data;
