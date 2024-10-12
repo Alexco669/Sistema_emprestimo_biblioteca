@@ -13,7 +13,7 @@ public class Cliente {
 
     @Column(name = "nome", nullable = false, length = 50)
     private String nome;
-    @Column(name = "cpf", nullable = false, length = 11)
+    @Column(name = "cpf", nullable = false, length = 11, unique = true)
     private String cpf;
     @Column(name = "email", nullable = false, length = 100)
     private String email;

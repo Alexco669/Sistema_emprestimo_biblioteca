@@ -10,7 +10,7 @@ public class Livro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id;
-    @Column(name = "titulo", nullable = false, length = 100)
+    @Column(name = "titulo", nullable = false, length = 100, unique = true)
     private String titulo;
 
     @Column(name = "autor", nullable = false, length = 150)
@@ -18,7 +18,7 @@ public class Livro {
 
     @Column(name = "anoPublicacao", nullable = false)
     private Integer anoPublicacao;
-    @Column(name = "ISBN", nullable = false)
+    @Column(name = "ISBN", nullable = false, unique = true)
     private Integer ISBN;
     @Column(name = "Categoria", nullable = true)
     @Enumerated(EnumType.STRING)
