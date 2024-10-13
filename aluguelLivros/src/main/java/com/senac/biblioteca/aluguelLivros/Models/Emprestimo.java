@@ -40,7 +40,12 @@ public class Emprestimo {
     }
 
     public void setExemplar(Exemplar exemplar) {
+        if (exemplar.isDisponivel()){
         this.exemplar = exemplar;
+        this.exemplar.setDisponivel(false);
+        } else {
+            throw new RuntimeException("Exemplar não está disponivel");
+        }
     }
 
     public Cliente getCliente() {
@@ -48,9 +53,13 @@ public class Emprestimo {
     }
 
     public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
 
+        if (cliente.isApto()){
+            this.cliente = cliente;
+        } else {
+            throw new RuntimeException("O cliente não pode fazer empréstimos");
+        }
+    }
     public LocalDate getData() {
         return data;
     }

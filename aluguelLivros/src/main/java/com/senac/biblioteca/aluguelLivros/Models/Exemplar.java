@@ -32,10 +32,6 @@ public class Exemplar {
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     public Integer getReferencia() {
         return referencia;
     }

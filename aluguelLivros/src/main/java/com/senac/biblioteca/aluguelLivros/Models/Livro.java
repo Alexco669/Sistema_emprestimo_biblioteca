@@ -2,6 +2,8 @@ package com.senac.biblioteca.aluguelLivros.Models;
 
 import jakarta.persistence.*;
 
+import java.math.BigInteger;
+
 @Entity
 @Table(name = "livros")
 public class Livro {
@@ -18,13 +20,13 @@ public class Livro {
 
     @Column(name = "anoPublicacao", nullable = false)
     private Integer anoPublicacao;
-    @Column(name = "ISBN", nullable = false, unique = true)
-    private Integer ISBN;
+    @Column(name = "ISBN", nullable = false  , unique = true)
+    private BigInteger ISBN;
     @Column(name = "Categoria", nullable = true)
     @Enumerated(EnumType.STRING)
     private Categoria categoria;
 
-    public Livro(Integer id, String titulo, String autor, Integer anoPublicacao, Integer ISBN, Categoria categoria) {
+    public Livro(Integer id, String titulo, String autor, Integer anoPublicacao, BigInteger ISBN, Categoria categoria) {
         Id = id;
         this.titulo = titulo;
         this.autor = autor;
@@ -38,10 +40,6 @@ public class Livro {
 
     public Integer getId() {
         return Id;
-    }
-
-    public void setId(Integer id) {
-        Id = id;
     }
 
     public String getTitulo() {
@@ -68,11 +66,11 @@ public class Livro {
         this.anoPublicacao = anoPublicacao;
     }
 
-    public Integer getISBN() {
+    public BigInteger getISBN() {
         return ISBN;
     }
 
-    public void setISBN(Integer ISBN) {
+    public void setISBN(BigInteger ISBN) {
         this.ISBN = ISBN;
     }
 
